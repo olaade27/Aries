@@ -10,9 +10,15 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if let customColor = UIColor(hex: "753188") {
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: customColor]
+            let backButtonAppearance = UIBarButtonItem.appearance(whenContainedInInstancesOf: [UINavigationController.self])
+            backButtonAppearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: customColor], for: .normal)
+        }
+            
         // Override point for customization after application launch.
         return true
     }
